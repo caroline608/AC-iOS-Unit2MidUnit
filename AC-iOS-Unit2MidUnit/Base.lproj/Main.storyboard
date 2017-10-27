@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,15 +15,98 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AC_iOS_Unit2MidUnit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8AW-3R-wb5" userLabel="RJ View">
+                                <rect key="frame" x="0.0" y="245.33333333333331" width="414" height="490.66666666666669"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Romeo And Juliet: Scene IV" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3R-PE-PL4">
+                                        <rect key="frame" x="47.666666666666657" y="42.999999999999972" width="320" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Romeo, Benvolio, or Mercutio" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wcf-UU-vNG">
+                                        <rect key="frame" x="57" y="130.99999999999997" width="300" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8v7-fH-Qh9">
+                                        <rect key="frame" x="52.333333333333343" y="226.99999999999997" width="310.66666666666663" height="245.00000000000003"/>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="8v7-fH-Qh9" firstAttribute="top" secondItem="Wcf-UU-vNG" secondAttribute="bottom" constant="66" id="CBz-iF-2T8"/>
+                                    <constraint firstItem="8v7-fH-Qh9" firstAttribute="centerX" secondItem="8AW-3R-wb5" secondAttribute="centerX" id="Zch-of-7xe"/>
+                                    <constraint firstItem="8v7-fH-Qh9" firstAttribute="height" secondItem="8AW-3R-wb5" secondAttribute="height" multiplier="0.5" id="c6r-fo-NXZ"/>
+                                    <constraint firstItem="o3R-PE-PL4" firstAttribute="centerX" secondItem="8AW-3R-wb5" secondAttribute="centerX" id="eWP-Da-6Pn"/>
+                                    <constraint firstItem="o3R-PE-PL4" firstAttribute="top" secondItem="8AW-3R-wb5" secondAttribute="top" constant="43" id="jFS-TF-d74"/>
+                                    <constraint firstItem="Wcf-UU-vNG" firstAttribute="centerX" secondItem="8AW-3R-wb5" secondAttribute="centerX" id="jYH-ch-SOK"/>
+                                    <constraint firstItem="Wcf-UU-vNG" firstAttribute="top" secondItem="o3R-PE-PL4" secondAttribute="bottom" constant="56" id="lhK-yd-eL7"/>
+                                    <constraint firstItem="Wcf-UU-vNG" firstAttribute="leading" secondItem="8AW-3R-wb5" secondAttribute="leading" constant="57" id="uXM-LU-l1n"/>
+                                    <constraint firstItem="8v7-fH-Qh9" firstAttribute="width" secondItem="8AW-3R-wb5" secondAttribute="width" multiplier="0.75" id="yBu-Pj-UvC"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nbS-aC-IgP" userLabel="PM View">
+                                <rect key="frame" x="0.0" y="20.000000000000014" width="414" height="225.33333333333337"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZhT-TT-vH7">
+                                        <rect key="frame" x="174.66666666666666" y="187.33333333333334" width="65" height="30"/>
+                                        <state key="normal" title="Next Line"/>
+                                        <connections>
+                                            <action selector="nextLinePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZBW-Cu-AlT"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Polonius Monologue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKd-FO-sz2">
+                                        <rect key="frame" x="93.333333333333314" y="8" width="227.33333333333337" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display lines of monologue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AL2-9v-0NQ">
+                                        <rect key="frame" x="87" y="89.666666666666657" width="240" height="20.999999999999986"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.81600703679999997" blue="0.79044793879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ZhT-TT-vH7" firstAttribute="centerX" secondItem="nbS-aC-IgP" secondAttribute="centerX" id="1xe-Xt-xaS"/>
+                                    <constraint firstItem="AL2-9v-0NQ" firstAttribute="leading" secondItem="nbS-aC-IgP" secondAttribute="leading" constant="87" id="8pK-m5-W8K"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZhT-TT-vH7" secondAttribute="bottom" constant="8" id="Gby-us-fxJ"/>
+                                    <constraint firstItem="tKd-FO-sz2" firstAttribute="top" secondItem="nbS-aC-IgP" secondAttribute="top" constant="8" id="Z8F-vL-OAv"/>
+                                    <constraint firstItem="AL2-9v-0NQ" firstAttribute="centerX" secondItem="nbS-aC-IgP" secondAttribute="centerX" id="i0c-dG-nxE"/>
+                                    <constraint firstItem="tKd-FO-sz2" firstAttribute="centerX" secondItem="nbS-aC-IgP" secondAttribute="centerX" id="mZC-0A-6mL"/>
+                                    <constraint firstItem="AL2-9v-0NQ" firstAttribute="top" secondItem="nbS-aC-IgP" secondAttribute="bottom" multiplier="0.4" id="qjH-r1-j7x"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8AW-3R-wb5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1lL-SM-b3H"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nbS-aC-IgP" secondAttribute="trailing" id="HPr-a4-sPm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8AW-3R-wb5" secondAttribute="bottom" id="JAs-vc-aaD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nbS-aC-IgP" secondAttribute="bottom" multiplier="3" id="SVx-Fr-NRS"/>
+                            <constraint firstItem="8AW-3R-wb5" firstAttribute="top" secondItem="nbS-aC-IgP" secondAttribute="bottom" id="W2Q-uc-IkE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8AW-3R-wb5" secondAttribute="trailing" id="jKh-Dr-6Df"/>
+                            <constraint firstItem="nbS-aC-IgP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="mHZ-pa-OmY"/>
+                            <constraint firstItem="nbS-aC-IgP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="we8-U0-UIR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="displayInputsLines" destination="8v7-fH-Qh9" id="WjM-gq-iW7"/>
+                        <outlet property="displayLinesLabel" destination="AL2-9v-0NQ" id="cEB-b1-gRX"/>
+                        <outlet property="inputNameField" destination="Wcf-UU-vNG" id="efU-JJ-rM1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="132.68365817091455"/>
+            <point key="canvasLocation" x="139.13043478260872" y="132.06521739130434"/>
         </scene>
     </scenes>
 </document>
