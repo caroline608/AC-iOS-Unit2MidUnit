@@ -9,13 +9,6 @@
 import Foundation
 
 
-//struct NextLine {
-//    var line: String
-//    init(line: String) {
-//        self.line = line
-//    }
-//}
-
 class PoloniusMonologueModel {
     
    

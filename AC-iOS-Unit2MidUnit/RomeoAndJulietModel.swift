@@ -96,7 +96,7 @@ struct RomeoAndJulietModel {
     func checkActor(name: String) -> Input {
         let actors = [romeo, benvolio, mercutio]
         for actor in actors {
-            if actor.rawValue.lowercased() == name.lowercased().trimmingCharacters(in: CharacterSet.whitespaces) {
+            if actor.rawValue == name.lowercased().trimmingCharacters(in: CharacterSet.whitespaces) {
                 return Input.valid
             }
         }
