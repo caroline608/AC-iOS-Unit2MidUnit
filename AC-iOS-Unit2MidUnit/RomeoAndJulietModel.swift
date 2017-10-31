@@ -107,7 +107,6 @@ struct RomeoAndJulietModel {
         var displayActorsLines = ""
         for lines in sceneFourTextArr {
             if lines.components(separatedBy: ":").first == of.uppercased().trimmingCharacters(in: CharacterSet.whitespaces) {
-                print(lines)
                 displayActorsLines += "\(lines)"
             }
         }
