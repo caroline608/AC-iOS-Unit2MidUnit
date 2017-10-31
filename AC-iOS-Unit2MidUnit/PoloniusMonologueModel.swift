@@ -36,5 +36,5 @@ class PoloniusMonologueModel {
                  "And tediousness the limbs and outward flourishes,",
                  "I will be brief. Your noble son is mad."
                 ]
-    var currentIndex = 0
+   private var currentIndex = 0
 }

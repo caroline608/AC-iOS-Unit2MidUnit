@@ -8,35 +8,45 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
     var pvModel = PoloniusMonologueModel()
+    var rjModel = RomeoAndJulietModel()
     
     @IBOutlet weak var displayLinesLabel: UILabel!
     
     @IBOutlet weak var inputNameField: UITextField!
     
-    @IBOutlet weak var displayInputsLines: UIScrollView!
+    @IBOutlet weak var displayActorsLines: UITextView!
+    
     
     @IBAction func nextLinePressed(_ sender: UIButton) {
         let newNextLine = pvModel.getNextLine()
-                    displayLinesLabel.text = newNextLine
+        displayLinesLabel.text = newNextLine
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        inputNameField.delegate? = self
+        inputNameField.delegate = self
         displayLinesLabel.text = pvModel.getNextLine()
-
-        
-        
-        
-    
-    
-        
-        
-        // Do any additional setup after loading the view.
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard let actor = inputNameField.text else {
+            return false
+        }
+        switch rjModel.checkActor(name: actor ) {
+        case .valid:
+            displayActorsLines.text = rjModel.getLines(of: actor)
+        case .invalid:
+            displayActorsLines.text.removeAll()
+        }
+        textField.resignFirstResponder()
+        return true
+    }
 }
+ 
+
+        
+
 
